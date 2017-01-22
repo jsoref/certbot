@@ -254,7 +254,6 @@ class AutoTests(TestCase):
         """
         NEW_LE_AUTO = build_le_auto(
                 version='99.9.9',
-                requirements='letsencrypt==99.9.9 --hash=sha256:1cc14d61ab424cdee446f51e50f1123f8482ec740587fe78626c933bba2873a0')
         NEW_LE_AUTO_SIG = signed(NEW_LE_AUTO)
 
         with ephemeral_dir() as venv_dir:
@@ -328,7 +327,6 @@ class AutoTests(TestCase):
                 install_le_auto(
                     build_le_auto(
                         version='99.9.9',
-                        requirements='configobj==5.0.6 --hash=sha256:badbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadbadb'),
                     venv_dir)
                 try:
                     out, err = run_le_auto(venv_dir, base_url)
