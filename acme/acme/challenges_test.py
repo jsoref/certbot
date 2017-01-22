@@ -54,25 +54,25 @@ class KeyAuthorizationChallengeResponseTest(unittest.TestCase):
     def test_verify_ok(self):
         from acme.challenges import KeyAuthorizationChallengeResponse
         response = KeyAuthorizationChallengeResponse(
-            key_authorization='foo.oKGqedy-b-acd5eoybm2f-NVFxvyOoET5CNy3xnv8WY')
+            key_authorization='')
         self.assertTrue(response.verify(self.chall, KEY.public_key()))
 
     def test_verify_wrong_token(self):
         from acme.challenges import KeyAuthorizationChallengeResponse
         response = KeyAuthorizationChallengeResponse(
-            key_authorization='bar.oKGqedy-b-acd5eoybm2f-NVFxvyOoET5CNy3xnv8WY')
+            key_authorization='')
         self.assertFalse(response.verify(self.chall, KEY.public_key()))
 
     def test_verify_wrong_thumbprint(self):
         from acme.challenges import KeyAuthorizationChallengeResponse
         response = KeyAuthorizationChallengeResponse(
-            key_authorization='foo.oKGqedy-b-acd5eoybm2f-NVFxv')
+            key_authorization='')
         self.assertFalse(response.verify(self.chall, KEY.public_key()))
 
     def test_verify_wrong_form(self):
         from acme.challenges import KeyAuthorizationChallengeResponse
         response = KeyAuthorizationChallengeResponse(
-            key_authorization='.foo.oKGqedy-b-acd5eoybm2f-'
+            key_authorization=''
             'NVFxvyOoET5CNy3xnv8WY')
         self.assertFalse(response.verify(self.chall, KEY.public_key()))
 
