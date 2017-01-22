@@ -29,14 +29,14 @@ class TlsSniPerformTest(util.NginxTest):
             challb=acme_util.chall_to_challb(
                 challenges.TLSSNI01(
                     token=""
-                          "\x80\xe2_X\t\xe7\xc7\xa4\t\xca\xf7&\x945"
+                          ""
                 ), "pending"),
             domain="another.alias", account_key=account_key),
         achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
                 challenges.TLSSNI01(
                     token=""
-                          "\xeb9\xf1\xf5\xb9\xefVM\xc9w\xa4u\x9c\xe1\x87\xb4"
+                          ""
                 ), "pending"),
             domain="www.example.org", account_key=account_key),
         achallenges.KeyAuthorizationAnnotatedChallenge(

@@ -58,7 +58,7 @@ class JWAHSTest(unittest.TestCase):  # pylint: disable=too-few-public-methods
     def test_it(self):
         from acme.jose.jwa import HS256
         sig = (
-            b"\xceR\xea\xcd\x94\xab\xcf\xfb\xe0\xacA.:\x1a'\x08i\xe2\xc4"
+            b""
             b"\r\x85+\x0e\x85\xaeUZ\xd4\xb3\x97zO"
         )
         self.assertEqual(HS256.sign(b'some key', b'foo'), sig)
