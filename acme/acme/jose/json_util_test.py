@@ -287,7 +287,7 @@ class DeEncodersTest(unittest.TestCase):
 
     def test_decode_hex16(self):
         from acme.jose.json_util import decode_hex16
-        decoded = decode_hex16(u'666f6f')
+        decoded = decode_hex16(u'')
         self.assertEqual(b'foo', decoded)
         self.assertTrue(isinstance(decoded, six.binary_type))
 

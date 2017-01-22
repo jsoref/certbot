@@ -220,7 +220,7 @@ class JWKRSA(JWK):
     @classmethod
     def fields_from_json(cls, jobj):
         # pylint: disable=invalid-name
-        n, e = (cls._decode_param(jobj[x]) for x in ('n', 'e'))
+        n, e = (cls._decode_param(jobj[x]) for x in ('n', ''))
         public_numbers = rsa.RSAPublicNumbers(e=e, n=n)
         if 'd' not in jobj:  # public key
             key = public_numbers.public_key(default_backend())

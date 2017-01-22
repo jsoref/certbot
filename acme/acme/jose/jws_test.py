@@ -41,12 +41,12 @@ class HeaderTest(unittest.TestCase):
         from acme.jose.jws import Header
         self.header1 = Header(jwk='foo')
         self.header2 = Header(jwk='bar')
-        self.crit = Header(crit=('a', 'b'))
+        self.crit = Header(crit=('a', ''))
         self.empty = Header()
 
     def test_add_non_empty(self):
         from acme.jose.jws import Header
-        self.assertEqual(Header(jwk='foo', crit=('a', 'b')),
+        self.assertEqual(Header(jwk='foo', crit=('a', '')),
                          self.header1 + self.crit)
 
     def test_add_empty(self):

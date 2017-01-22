@@ -294,7 +294,7 @@ class TLSSNI01ResponseTest(unittest.TestCase):
     def setUp(self):
         from acme.challenges import TLSSNI01
         self.chall = TLSSNI01(
-            token=jose.b64decode(b'a82d5ff8ef740d12881f6d3c2277ab2e'))
+            token=jose.b64decode(b''))
 
         self.response = self.chall.response(KEY)
         self.jmsg = {
@@ -393,7 +393,7 @@ class TLSSNI01Test(unittest.TestCase):
     def setUp(self):
         from acme.challenges import TLSSNI01
         self.msg = TLSSNI01(
-            token=jose.b64decode('a82d5ff8ef740d12881f6d3c2277ab2e'))
+            token=jose.b64decode(''))
         self.jmsg = {
             'type': 'tls-sni-01',
             'token': 'a82d5ff8ef740d12881f6d3c2277ab2e',
@@ -412,7 +412,7 @@ class TLSSNI01Test(unittest.TestCase):
 
     def test_from_json_invalid_token_length(self):
         from acme.challenges import TLSSNI01
-        self.jmsg['token'] = jose.encode_b64jose(b'abcd')
+        self.jmsg['token'] = jose.encode_b64jose(b'')
         self.assertRaises(
             jose.DeserializationError, TLSSNI01.from_json, self.jmsg)
 

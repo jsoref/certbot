@@ -70,7 +70,7 @@ class BaseRenewableCertTest(unittest.TestCase):
                                         kind + ".pem")
             config[kind] = kind_path
         with open(os.path.join(self.tempdir, "live", "example.org",
-                                        "README"), 'a'):
+                                        "README"), ''):
             pass
         config["archive"] = archive_path
         config.filename = os.path.join(self.tempdir, "renewal",
@@ -777,7 +777,7 @@ class RenewableCertTests(BaseRenewableCertTest):
             live_path = self.config[kind]
             basename = kind + "1.pem"
             archive_path = os.path.join(archive_dir_path, basename)
-            open(archive_path, 'a').close()
+            open(archive_path, '').close()
             os.symlink(os.path.join(self.tempdir, basename), live_path)
         self.assertRaises(errors.CertStorageError,
                           storage.RenewableCert, self.config.filename,
@@ -792,7 +792,7 @@ class DeleteFilesTest(BaseRenewableCertTest):
         for kind in ALL_FOUR:
             kind_path = os.path.join(self.tempdir, "live", "example.org",
                                         kind + ".pem")
-            with open(kind_path, 'a'):
+            with open(kind_path, ''):
                 pass
         self.config.write()
         self.assertTrue(os.path.exists(os.path.join(
@@ -818,7 +818,7 @@ class DeleteFilesTest(BaseRenewableCertTest):
             self.tempdir, "archive", "example.org")))
 
     def test_bad_renewal_config(self):
-        with open(self.config.filename, 'a') as config_file:
+        with open(self.config.filename, '') as config_file:
             config_file.write("asdfasfasdfasdf")
 
         self.assertRaises(errors.CertStorageError, self._call)
@@ -856,7 +856,7 @@ class DeleteFilesTest(BaseRenewableCertTest):
 
     def test_livedir_not_empty(self):
         with open(os.path.join(
-            self.cli_config.live_dir, "example.org", "other_file"), 'a'):
+            self.cli_config.live_dir, "example.org", "other_file"), ''):
             pass
         self._call()
         self.assertFalse(os.path.exists(self.config.filename))

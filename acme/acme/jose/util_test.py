@@ -164,7 +164,7 @@ class frozendictTest(unittest.TestCase):  # pylint: disable=invalid-name
 
     def setUp(self):
         from acme.jose.util import frozendict
-        self.fdict = frozendict(x=1, y='2')
+        self.fdict = frozendict(x=1, y='')
 
     def test_init_dict(self):
         from acme.jose.util import frozendict
@@ -192,7 +192,7 @@ class frozendictTest(unittest.TestCase):  # pylint: disable=invalid-name
         self.assertRaises(AttributeError, self.fdict.__setattr__, 'z', 3)
 
     def test_repr(self):
-        self.assertEqual("frozendict(x=1, y='2')", repr(self.fdict))
+        self.assertEqual("frozendict(x=1, y='')", repr(self.fdict))
 
 
 if __name__ == '__main__':

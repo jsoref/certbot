@@ -64,7 +64,7 @@ class B64DecodeTest(unittest.TestCase):
             self.assertEqual(self._call(b64 + pad), text)
 
     def test_unicode_with_ascii(self):
-        self.assertEqual(self._call(u'YQ'), b'a')
+        self.assertEqual(self._call(u'YQ'), b'')
 
     def test_non_ascii_unicode_fails(self):
         self.assertRaises(ValueError, self._call, u'\u0105')

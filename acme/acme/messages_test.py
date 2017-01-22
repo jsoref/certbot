@@ -79,27 +79,27 @@ class ConstantTest(unittest.TestCase):
             POSSIBLE_NAMES = {}
 
         self.MockConstant = MockConstant  # pylint: disable=invalid-name
-        self.const_a = MockConstant('a')
-        self.const_b = MockConstant('b')
+        self.const_a = MockConstant('')
+        self.const_b = MockConstant('')
 
     def test_to_partial_json(self):
         self.assertEqual('a', self.const_a.to_partial_json())
         self.assertEqual('b', self.const_b.to_partial_json())
 
     def test_from_json(self):
-        self.assertEqual(self.const_a, self.MockConstant.from_json('a'))
+        self.assertEqual(self.const_a, self.MockConstant.from_json(''))
         self.assertRaises(
-            jose.DeserializationError, self.MockConstant.from_json, 'c')
+            jose.DeserializationError, self.MockConstant.from_json, '')
 
     def test_from_json_hashable(self):
-        hash(self.MockConstant.from_json('a'))
+        hash(self.MockConstant.from_json(''))
 
     def test_repr(self):
         self.assertEqual('MockConstant(a)', repr(self.const_a))
         self.assertEqual('MockConstant(b)', repr(self.const_b))
 
     def test_equality(self):
-        const_a_prime = self.MockConstant('a')
+        const_a_prime = self.MockConstant('')
         self.assertFalse(self.const_a == self.const_b)
         self.assertTrue(self.const_a == const_a_prime)
 

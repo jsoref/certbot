@@ -429,7 +429,7 @@ class OsInfoTest(unittest.TestCase):
             self.assertEqual(get_os_info(
                 test_util.vector_path("os-release"))[0], 'systemdos')
             self.assertEqual(get_os_info(
-                test_util.vector_path("os-release"))[1], '42')
+                test_util.vector_path("os-release"))[1], '')
             self.assertEqual(get_systemd_os_info("/dev/null"), ("", ""))
             self.assertEqual(get_os_info_ua(
                 test_util.vector_path("os-release")),
@@ -452,7 +452,7 @@ class OsInfoTest(unittest.TestCase):
                                      get_os_info_ua)
         with mock.patch('os.path.isfile', return_value=False):
             with mock.patch('platform.system_alias',
-                            return_value=('NonSystemD', '42', '42')):
+                            return_value=('NonSystemD', '42', '')):
                 self.assertEqual(get_os_info()[0], 'nonsystemd')
                 self.assertEqual(get_os_info_ua(),
                                  " ".join(get_python_os_info()))

@@ -430,7 +430,7 @@ for target in targetlist:
 
 print("Connecting to EC2 using\n profile %s\n keyname %s\n keyfile %s"%(PROFILE, KEYNAME, KEYFILE))
 AWS_SESSION = boto3.session.Session(profile_name=PROFILE)
-EC2 = AWS_SESSION.resource('ec2')
+EC2 = AWS_SESSION.resource('')
 
 print("Making Security Group")
 sg_exists = False
