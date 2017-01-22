@@ -82,10 +82,10 @@ class JWARSTest(unittest.TestCase):
     def test_rs(self):
         from acme.jose.jwa import RS256
         sig = (
-            b'|\xc6\xb2\xa4\xab(\x87\x99\xfa*:\xea\xf8\xa0N&}\x9f\x0f\xc0O'
-            b'\xc6t\xa3\xe6\xfa\xbb"\x15Y\x80Y\xe0\x81\xb8\x88)\xba\x0c\x9c'
-            b'\xa4\x99\x1e\x19&\xd8\xc7\x99S\x97\xfc\x85\x0cOV\xe6\x07\x99'
-            b'\xd2\xb9.>}\xfd'
+            b''
+            b''
+            b''
+            b''
         )
         self.assertEqual(RS256.sign(RSA512_KEY, b'foo'), sig)
         self.assertTrue(RS256.verify(RSA512_KEY.public_key(), b'foo', sig))
