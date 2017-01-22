@@ -23,25 +23,25 @@ class TlsSniPerformTest(util.NginxTest):
     achalls = [
         achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
-                challenges.TLSSNI01(token="kNdwjwOeX0I_A8DXt9Msmg"), "pending"),
+                challenges.TLSSNI01(token=""), "pending"),
             domain="www.example.com", account_key=account_key),
         achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
                 challenges.TLSSNI01(
-                    token="\xba\xa9\xda?<m\xaewmx\xea\xad\xadv\xf4\x02\xc9y"
+                    token=""
                           "\x80\xe2_X\t\xe7\xc7\xa4\t\xca\xf7&\x945"
                 ), "pending"),
             domain="another.alias", account_key=account_key),
         achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
                 challenges.TLSSNI01(
-                    token="\x8c\x8a\xbf_-f\\cw\xee\xd6\xf8/\xa5\xe3\xfd"
+                    token=""
                           "\xeb9\xf1\xf5\xb9\xefVM\xc9w\xa4u\x9c\xe1\x87\xb4"
                 ), "pending"),
             domain="www.example.org", account_key=account_key),
         achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
-                challenges.TLSSNI01(token="kNdwjxOeX0I_A8DXt9Msmg"), "pending"),
+                challenges.TLSSNI01(token=""), "pending"),
             domain="sslon.com", account_key=account_key),
     ]
 

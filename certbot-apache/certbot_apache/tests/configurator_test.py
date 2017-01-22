@@ -1207,13 +1207,13 @@ class MultipleVhostsTest(util.ApacheTest):
         achall1 = achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
                 challenges.TLSSNI01(
-                    token="jIq_Xy1mXGN37tb4L6Xj_es58fW571ZNyXekdZzhh7Q"),
+                    token=""),
                 "pending"),
             domain="encryption-example.demo", account_key=account_key)
         achall2 = achallenges.KeyAuthorizationAnnotatedChallenge(
             challb=acme_util.chall_to_challb(
                 challenges.TLSSNI01(
-                    token="uqnaPzxtrndteOqtrXb0Asl5gOJfWAnnx6QJyvcmlDU"),
+                    token=""),
                 "pending"),
             domain="certbot.demo", account_key=account_key)
 
