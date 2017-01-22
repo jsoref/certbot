@@ -225,27 +225,27 @@ class JSONObjectWithFieldsTest(unittest.TestCase):
 class DeEncodersTest(unittest.TestCase):
     def setUp(self):
         self.b64_cert = (
-            u'MIIB3jCCAYigAwIBAgICBTkwDQYJKoZIhvcNAQELBQAwdzELMAkGA1UEBhM'
-            u'CVVMxETAPBgNVBAgMCE1pY2hpZ2FuMRIwEAYDVQQHDAlBbm4gQXJib3IxKz'
-            u'ApBgNVBAoMIlVuaXZlcnNpdHkgb2YgTWljaGlnYW4gYW5kIHRoZSBFRkYxF'
-            u'DASBgNVBAMMC2V4YW1wbGUuY29tMB4XDTE0MTIxMTIyMzQ0NVoXDTE0MTIx'
-            u'ODIyMzQ0NVowdzELMAkGA1UEBhMCVVMxETAPBgNVBAgMCE1pY2hpZ2FuMRI'
-            u'wEAYDVQQHDAlBbm4gQXJib3IxKzApBgNVBAoMIlVuaXZlcnNpdHkgb2YgTW'
-            u'ljaGlnYW4gYW5kIHRoZSBFRkYxFDASBgNVBAMMC2V4YW1wbGUuY29tMFwwD'
-            u'QYJKoZIhvcNAQEBBQADSwAwSAJBAKx1c7RR7R_drnBSQ_zfx1vQLHUbFLh1'
-            u'AQQQ5R8DZUXd36efNK79vukFhN9HFoHZiUvOjm0c-pVE6K-EdE_twuUCAwE'
-            u'AATANBgkqhkiG9w0BAQsFAANBAC24z0IdwIVKSlntksllvr6zJepBH5fMnd'
-            u'fk3XJp10jT6VE-14KNtjh02a56GoraAvJAT5_H67E8GvJ_ocNnB_o'
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
         )
         self.b64_csr = (
-            u'MIIBXTCCAQcCAQAweTELMAkGA1UEBhMCVVMxETAPBgNVBAgMCE1pY2hpZ2F'
-            u'uMRIwEAYDVQQHDAlBbm4gQXJib3IxDDAKBgNVBAoMA0VGRjEfMB0GA1UECw'
-            u'wWVW5pdmVyc2l0eSBvZiBNaWNoaWdhbjEUMBIGA1UEAwwLZXhhbXBsZS5jb'
-            u'20wXDANBgkqhkiG9w0BAQEFAANLADBIAkEArHVztFHtH92ucFJD_N_HW9As'
-            u'dRsUuHUBBBDlHwNlRd3fp580rv2-6QWE30cWgdmJS86ObRz6lUTor4R0T-3'
-            u'C5QIDAQABoCkwJwYJKoZIhvcNAQkOMRowGDAWBgNVHREEDzANggtleGFtcG'
-            u'xlLmNvbTANBgkqhkiG9w0BAQsFAANBAHJH_O6BtC9aGzEVCMGOZ7z9iIRHW'
-            u'Szr9x_bOzn7hLwsbXPAgO1QxEwL-X-4g20Gn9XBE1N9W6HCIEut2d8wACg'
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
+            u''
         )
 
     def test_encode_b64jose(self):
@@ -277,7 +277,7 @@ class DeEncodersTest(unittest.TestCase):
         self.assertEqual(b'foo', decode_b64jose(u'Zm9v', size=3, minimum=True))
         self.assertEqual(b'foo', decode_b64jose(u'Zm9v', size=2, minimum=True))
         self.assertRaises(errors.DeserializationError, decode_b64jose,
-                          u'Zm9v', size=4, minimum=True)
+                          u'', size=4, minimum=True)
 
     def test_encode_hex16(self):
         from acme.jose.json_util import encode_hex16
@@ -296,7 +296,7 @@ class DeEncodersTest(unittest.TestCase):
         self.assertEqual(b'foo', decode_hex16(u'666f6f', size=3, minimum=True))
         self.assertEqual(b'foo', decode_hex16(u'666f6f', size=2, minimum=True))
         self.assertRaises(errors.DeserializationError, decode_hex16,
-                          u'666f6f', size=4, minimum=True)
+                          u'', size=4, minimum=True)
 
     def test_decode_hex16_odd_length(self):
         from acme.jose.json_util import decode_hex16
