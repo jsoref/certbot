@@ -25,9 +25,9 @@ BootstrapRpmCommon() {
   fi
 
   if ! $SUDO $tool list *virtualenv >/dev/null 2>&1; then
-    echo "To use Certbot, packages from the EPEL repository need to be installed."
+    say "To use Certbot, packages from the EPEL repository need to be installed."
     if ! $SUDO $tool list epel-release >/dev/null 2>&1; then
-      echo "Please enable this repository and try running Certbot again."
+      say "Please enable this repository and try running Certbot again."
       exit 1
     fi
     if [ "$ASSUME_YES" = 1 ]; then
